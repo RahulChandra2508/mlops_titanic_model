@@ -1,0 +1,24 @@
+base:
+    target_column: "survived"
+    random_state: 0
+    test_size: 0.2
+
+data_source:
+    openml: 'https://www.openml.org/data/get_csv/16826755/phpMYEkMl'
+
+attributes:
+    cabin: cabin
+    numeric_variables:
+        - 'age'
+        - 'fare'
+    categorical_variables:
+        - 'sex'
+        - 'cabin'
+        - 'embarked'
+        - 'title'
+    drop_variables:
+        - 'name'
+        - 'ticket'
+        - 'boat'
+        - 'body'
+        - 'home.dest'

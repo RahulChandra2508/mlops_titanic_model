@@ -3,11 +3,12 @@
 import pandas as pd
 import numpy as np
 from typing import List
+import re
 from sklearn.base import BaseEstimator, TransformerMixin
 
 class ExtractLetterTransformer(BaseEstimator, TransformerMixin):
 
-    def __init__(self,variables):
+    def __init__(self,variables : List[str]):
 
         if not isinstance(variables, list):
             raise ValueError("Variable should be a list")
@@ -17,7 +18,7 @@ class ExtractLetterTransformer(BaseEstimator, TransformerMixin):
     def fit(self, X : pd.DataFrame, y: pd.Series):
         return self
     
-    def transform(self, X : pd.DataFrame, y: pd.Series) -> pd.DataFrame:
+    def transform(self, X : pd.DataFrame) -> pd.DataFrame:
         
         X =  X.copy()
         
@@ -27,7 +28,7 @@ class ExtractLetterTransformer(BaseEstimator, TransformerMixin):
         return X
 
 
-class Preprocesing(BaseEstimator, TransformerMixin):
+class Cleaning(BaseEstimator, TransformerMixin):
 
     def __init__(self, variables : List[str]):
         
@@ -36,10 +37,10 @@ class Preprocesing(BaseEstimator, TransformerMixin):
         
         self.variables = variables
 
-    def fit(self, X: pd.DataFrame, y: pd.Series):
+    def fit(self, X: pd.DataFrame):
         return self
     
-    def transform(self, X: pd.DataFrame, y: pd.Series) -> pd.DataFrame:
+    def transform(self, X: pd.DataFrame) -> pd.DataFrame:
         X = X.copy()
 
         def get_title(passenger):
@@ -58,6 +59,6 @@ class Preprocesing(BaseEstimator, TransformerMixin):
         X = X.replace("?", np.nan)
 
         for features in self.variables:
-           X[features] =  X[features].apply(get_title)
+           X["title"] =  X[features].apply(get_title)
            
         return X
