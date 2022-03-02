@@ -5,16 +5,16 @@ from sklearn.linear_model import LogisticRegression
 from processing import features as pp
 
 # for imputation
-from feature_engine.imputation import (
-    CategoricalImputer,
-    AddMissingIndicator,
-    MeanMedianImputer)
+from feature_engine.imputation import (CategoricalImputer,
+                                       AddMissingIndicator,
+                                       MeanMedianImputer
+                                       )
 
 # for encoding categorical variables
 from feature_engine.encoding import (
-    RareLabelEncoder,
-    OneHotEncoder
-)
+                                     RareLabelEncoder,
+                                     OneHotEncoder
+                                     )
 
 import yaml
 
@@ -54,7 +54,7 @@ def pipeline():
                         # scale
                         ('scaler', StandardScaler()),
 
-                        ('Logit', LogisticRegression(C=0.0005, random_state=0))
+                        ('Logit', LogisticRegression(C = config_file["model_params"]["C"], random_state= config_file["model_params"]["random_state"]))
                     ]
                         )
 

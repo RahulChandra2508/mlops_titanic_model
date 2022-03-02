@@ -1,13 +1,26 @@
+path:
+    PACKAGE_ROOT: classification_model
+    TRAINED_DATASET_DIR: trained_models
+
+files:
+    trained_model_name: classification_model
+    version: 0.0.1
+
 base:
     target_column: "survived"
     random_state: 0
     test_size: 0.2
 
+model_params:
+    C: 0.0005
+    random_state: 0
+
 data_source:
     openml: 'https://www.openml.org/data/get_csv/16826755/phpMYEkMl'
 
 attributes:
-    cabin: cabin
+    cabin: 
+        - cabin
     numeric_variables:
         - 'age'
         - 'fare'

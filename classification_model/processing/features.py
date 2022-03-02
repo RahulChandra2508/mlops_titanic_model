@@ -15,7 +15,7 @@ class ExtractLetterTransformer(BaseEstimator, TransformerMixin):
 
         self.variables = variables
 
-    def fit(self, X : pd.DataFrame, y: pd.Series):
+    def fit(self, X : pd.DataFrame, y: pd.Series = None):
         return self
     
     def transform(self, X : pd.DataFrame) -> pd.DataFrame:
@@ -37,7 +37,7 @@ class Cleaning(BaseEstimator, TransformerMixin):
         
         self.variables = variables
 
-    def fit(self, X: pd.DataFrame):
+    def fit(self, X: pd.DataFrame, y: pd.Series = None):
         return self
     
     def transform(self, X: pd.DataFrame) -> pd.DataFrame:
