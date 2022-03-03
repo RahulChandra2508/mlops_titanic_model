@@ -27,7 +27,6 @@ class ExtractLetterTransformer(BaseEstimator, TransformerMixin):
         
         return X
 
-
 class Cleaning(BaseEstimator, TransformerMixin):
 
     def __init__(self, variables : List[str]):
