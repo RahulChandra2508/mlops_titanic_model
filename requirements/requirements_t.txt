@@ -1,6 +1,4 @@
-cookiecutter==1.7.3
-ipykernel==6.9.1
-ipython==8.0.1
+# loading the requirements
 feature-engine==1.2.0
 joblib==1.1.0
 matplotlib==3.5.1
@@ -10,4 +8,6 @@ scikit-learn==1.0.2
 scipy==1.8.0
 statsmodels==0.13.2
 PyYAML==5.4.1
-mlflow==1.24.0
+
+# packages for testing
+pytest==7.0.1
