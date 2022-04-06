@@ -18,6 +18,7 @@ model_params:
 
 data_source:
   openml: "https://www.openml.org/data/get_csv/16826755/phpMYEkMl"
+  raw_data: raw_data/titanic_dataset.csv
 
 attributes:
   cabin:
@@ -42,4 +43,4 @@ mlflow_config:
   experiment_name: LogisticRegression
   run_name: mlops
   registered_model_name: LogisticRegressionModel
-  remote_server_uri: http://0.0.0.0:1234
+  remote_server_uri: http://localhost:5000

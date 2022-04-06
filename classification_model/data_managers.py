@@ -7,7 +7,8 @@ import pandas as pd
 # to persist the model and the scaler
 import joblib
 from processing import features
-import config
+
+# import config
 import yaml
 from sklearn.pipeline import Pipeline
 from pathlib import Path
@@ -32,14 +33,20 @@ def save_to_csv() -> None:
 
 # loading the data for testing the features
 def load_data_testing() -> pd.DataFrame:
+    #try:
+    #    data = pd.read_csv(config_file["data_source"]["openml"])
+    #   titanic_data = data.copy()
+    #except:
+    #    data = pd.read_csv(config_file["data_source"]["raw_data"])
+    #    titanic_data = data.copy()
 
-    data = pd.read_csv(config_file["data_source"]["openml"])
+    data = pd.read_csv(config_file["data_source"]["raw_data"])
     titanic_data = data.copy()
 
     # removing "?" and extracting lables from name column
-    #cleaning = features.Cleaning(variables=["name"])
-    #cleaning.fit(titanic_data)
-    #titanic_data = cleaning.transform(titanic_data)
+    cleaning = features.Cleaning(variables=["name"])
+    cleaning.fit(titanic_data)
+    titanic_data = cleaning.transform(titanic_data)
 
     # Correcting the data types for the variables with wrong data types
     titanic_data["fare"] = titanic_data["fare"].astype("float")

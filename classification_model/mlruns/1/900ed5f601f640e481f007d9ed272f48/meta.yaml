@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/rahul/Python/MLOps_Udemy/deploying-titanic-model/mlops_titanic_model/classification_model/mlruns/1/900ed5f601f640e481f007d9ed272f48/artifacts
+end_time: 1649147263311
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: 900ed5f601f640e481f007d9ed272f48
+run_uuid: 900ed5f601f640e481f007d9ed272f48
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1649147254406
+status: 3
+tags: []
+user_id: rahul
