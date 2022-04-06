@@ -1,5 +1,6 @@
 feature-engine==1.2.0
 joblib==1.1.0
+mlflow==1.24.0
 matplotlib==3.5.1
 numpy==1.22.2
 pandas==1.4.1
@@ -7,4 +8,3 @@ scikit-learn==1.0.2
 scipy==1.8.0
 statsmodels==0.13.2
 PyYAML==5.4.1
-mlflow==1.24.0
